@@ -20,7 +20,8 @@ const errorContainer = document.querySelector('#errorContainer');
 valider.addEventListener('click', ()=> {
     login = loginInput.value;
     password = passwordInput.value;
-    url = "http://localhost:90/gsb/login"
+    //url = "http://localhost:90/gsb/login"
+    url = "http://localhost:8080/gsb/login"
 
     //console.log(login);
     //console.log(password);

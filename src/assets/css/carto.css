@@ -67,7 +67,7 @@ main > div:first-of-type{
 
 #weather{    
     width: 30vw;
-    height: 50vh;
+    height: 40vh;
     flex-flow: column wrap;
     justify-content: space-around;
     text-align: center;
