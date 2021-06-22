@@ -6,6 +6,7 @@ const path = require('path')
 const openAlert = document.querySelector('#open-alert');
 // const openWindow = document.querySelector('#open-window');
 const weatherContainer = document.querySelector('#weather');
+const error = document.querySelector('#error');
 const forecastContainer = document.querySelector('#myChart');
 // const mapContainer = document.querySelector('#mapid');
 const keyword = document.querySelector('input');
@@ -150,10 +151,10 @@ const displayGraph = async(city) => {
 
         if (!times.includes(time) && hour[1] === "12:00:00") {
             let day = time.split(' ', 1);
-            console.log(day[0]);
+            //console.log(day[0]);
             let date = new Date(day[0]);
             let formattedDate = date.getDate() + "/0" + (date.getMonth() + 1) + "/" + date.getFullYear()
-            console.log(formattedDate);
+            //console.log(formattedDate);
             times.push(formattedDate);
         }
         var temperature = item.main.temp;
@@ -237,6 +238,10 @@ const getMap = async(city, firstWord) => {
                 zoomOffset: -1,
                 accessToken: 'pk.eyJ1IjoibWFyaWViYSIsImEiOiJja2tuc2RvMmgzNThtMnBxdXg0dWtlNXZmIn0.03wMZswCenHt5EeuNoCpRQ'
             }).addTo(mymap); 
+        } else {
+            // error.insertAdjacentHTML('afterbegin', `
+            //     <p style="font-size: 2rem;"> La ville entrée n'est pas correcte </p>
+            // `); 
         }
     }
 }
