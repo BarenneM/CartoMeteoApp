@@ -88,7 +88,7 @@ const fetchMeteo = async(city) => {
         <h2>${cityMaj}</h2>
         <div id="details">
             <p>${temperature}°C</p>
-            <img src="http://openweathermap.org/img/wn/${icon}.png" alt"${description}">
+            <img style="width: 25%" src="http://openweathermap.org/img/wn/${icon}.png" alt"${description}">
         </div>
     `);
 
