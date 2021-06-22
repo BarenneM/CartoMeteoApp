@@ -44,6 +44,17 @@ submitSearch.addEventListener('click', () => {
     fetchInfos(city, firstWord);
 })
 
+keyword.addEventListener("keydown",(event)=> {
+    if (event.keyCode == 13) {
+        city = keyword.value;
+
+        var res = keyword.value.split(" ",2);
+        const firstWord = res[0];
+
+        fetchInfos(city, firstWord);
+    }
+});
+
 logout.addEventListener('click', () => {
     let win;
     console.log("logout")
