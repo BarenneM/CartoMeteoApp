@@ -13,6 +13,7 @@ let win;
 let login = null;
 let password = null;
 let error = null;
+const errorContainer = document.querySelector('#errorContainer');
 
 
 
@@ -34,12 +35,16 @@ valider.addEventListener('click', ()=> {
     })
     .then((response) => {
         if(response.status === 401){
-            error = 'Bad login or password'
-            console.log('Unauthorized')
+            error = 'Mauvais identifiant ou mot de passe'
+            console.log('Unauthorized : ' + error);
+            errorContainer.insertAdjacentHTML('afterbegin', `
+            <p>${error}</p>
+        `);
         }else{
             win = new BrowserWindow({
                 width: 1200,
                 height: 1400,
+                //frame: false,
                 alwaysOnTop: true,
                 webPreferences:{
                     nodeIntegration: true,
