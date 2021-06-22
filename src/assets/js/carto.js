@@ -11,6 +11,7 @@ const forecastContainer = document.querySelector('#myChart');
 const keyword = document.querySelector('input');
 const options = document.querySelectorAll('#villes option');
 const submitSearch = document.querySelector('#submitSearch');
+const logout = document.querySelector('#logout');
 
 var mymap  = L.map('mapid').setView([51.505, -0.09], 13);
 var marker = L.marker([51.5, -0.09]).addTo(mymap);
@@ -42,6 +43,25 @@ submitSearch.addEventListener('click', () => {
 
     fetchInfos(city, firstWord);
 })
+
+logout.addEventListener('click', () => {
+    let win;
+    console.log("logout")
+    win = new BrowserWindow({
+        width: 500,
+        height: 800,
+        alwaysOnTop: true,
+        webPreferences:{
+            nodeIntegration: true,
+            contextIsolation: false,
+            enableRemoteModule: true
+        }
+    });
+
+    win.loadFile("./view/authentification.html");
+    window.close();
+//}
+} )
 
 
 // ipcRenderer.on('weather', (event, city, temperature, description, icon) => {

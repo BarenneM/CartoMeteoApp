@@ -6,6 +6,8 @@ const path = require('path');
 const valider = document.querySelector("#valider");
 const loginInput = document.getElementById("login");
 const passwordInput = document.getElementById("password");
+const mainSection = document.getElementById("mainSection");
+
 
 var window = remote.getCurrentWindow(); // remote module
 
@@ -18,10 +20,20 @@ const errorContainer = document.querySelector('#errorContainer');
 
 
 valider.addEventListener('click', ()=> {
+    this.authentification();
+});
+
+mainSection.addEventListener("keydown",(event)=> {
+    if (event.keyCode == 13) {
+        this.authentification();
+    }
+});
+      
+function authentification() {
     login = loginInput.value;
     password = passwordInput.value;
-    //url = "http://localhost:90/gsb/login"
-    url = "http://localhost:8080/gsb/login"
+    url = "http://localhost:90/gsb/login"
+    //url = "http://localhost:8080/gsb/login"
 
     //console.log(login);
     //console.log(password);
@@ -45,7 +57,7 @@ valider.addEventListener('click', ()=> {
             win = new BrowserWindow({
                 width: 1200,
                 height: 1400,
-                //frame: false,
+                frame: false,
                 alwaysOnTop: true,
                 webPreferences:{
                     nodeIntegration: true,
@@ -64,9 +76,7 @@ valider.addEventListener('click', ()=> {
     .then((data) => {
         
     });
-});
-      
-
+}
 
 
 

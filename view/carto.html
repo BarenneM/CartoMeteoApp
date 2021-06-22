@@ -16,6 +16,7 @@
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src='https://api.mapbox.com/mapbox-gl-js/v2.1.1/mapbox-gl.js'></script>
     <link href='https://api.mapbox.com/mapbox-gl-js/v2.1.1/mapbox-gl.css' rel='stylesheet'/>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css" integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk" crossorigin="anonymous">
 
     <!-- Assets -->
     <link rel="stylesheet" href="../src/assets/css/carto.css">
@@ -23,16 +24,19 @@
 
     <title>La chaîne météo</title>
 </head>
-<body>
+<body id="bodyContainer">
     <header class="flex">
         <h1>La chaîne météo</h1>
         <div>
             <div class="search">
                 <input list="villes" type="text" id="keyword" placeholder="ex. Marseille">
                 <datalist id="villes"></datalist>
-                <button id="submitSearch">Rechercher</button>
+                <button id="submitSearch"><i class="fas fa-search"></i></button>
+                
             </div>
+            
         </div>
+        <button id="logout"> Déconnexion </button>
     </header>
     <main class="flex">
         <div>

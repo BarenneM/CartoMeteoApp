@@ -27,6 +27,7 @@ input {
     border-radius: 50px;
     width: 50%;
     height: 2em;
+    margin: 1em;
 }
 
 button {
@@ -56,8 +57,4 @@ p{
     padding: 1rem;
     font-size: 1.5rem;
     color: red;
-}
-
-.champs {
-    margin: 1em;
 }
