@@ -115,9 +115,15 @@ const displayGraph = async(city) => {
     data.list.forEach((item) => {
         var time = item.dt_txt;
         let hour = time.split(' ', 2)
+        
 
         if (!times.includes(time) && hour[1] === "12:00:00") {
-            times.push(time);
+            let day = time.split(' ', 1);
+            console.log(day[0]);
+            let date = new Date(day[0]);
+            let formattedDate = date.getDate() + "/0" + (date.getMonth() + 1) + "/" + date.getFullYear()
+            console.log(formattedDate);
+            times.push(formattedDate);
         }
         var temperature = item.main.temp;
         var celsus = temperature - 273.15;
