@@ -32,8 +32,8 @@ mainSection.addEventListener("keydown",(event)=> {
 function authentification() {
     login = loginInput.value;
     password = passwordInput.value;
-    url = "http://localhost:90/gsb/login"
-    //url = "http://localhost:8080/gsb/login"
+    // url = "http://localhost:90/gsb/login"
+    url = "http://localhost:8080/gsb/login"
 
     //console.log(login);
     //console.log(password);
